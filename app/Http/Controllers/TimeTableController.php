@@ -65,8 +65,8 @@ class TimeTableController extends Controller
                     if ($day != "Saturday" || $day != "Sunday") {
                         for ($i = 0; $i < $assign_subject; $i++) {
                             $subject_id = TimeTableService::checkSubjectInTimeTable($class->id, $section->id, $day);
-                            $start_time = Carbon::parse($request->start_time)->addMinutes($oneLectureTime * $i)->format('H:i');
-                            $end_time = Carbon::parse($request->start_time)->addMinutes($oneLectureTime * $i + $oneLectureTime)->format('H:i');
+                            $start_time = Carbon::parse($request->start_time)->addMinutes($oneLectureTime * $i + 5)->format('H:i');
+                            $end_time = Carbon::parse($request->start_time)->addMinutes($oneLectureTime * $i + $oneLectureTime + 5)->format('H:i');
                             $teacherSubject = TimeTableService::checkTeacherInTimeTable($class->id, $day, $start_time, $end_time, $subject_id, $section->id);
                             TimeTable::create([
                                 'grade_id' => $class->id,
