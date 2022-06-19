@@ -57,6 +57,10 @@ Route::group(['middleware' => ['auth','role:Admin']], function ()
     Route::resource('student', 'StudentController');
     Route::get('attendance', 'AttendanceController@index')->name('attendance.index');
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 6fcd5b322dd4d2209fbbc15b6509920942ba7f93
     Route::get('/notice/board', 'TeacherController@noticeBoard')->name('notice.board.index');
     Route::get('/notice/board/add', 'TeacherController@addNotice')->name('add.notice');
     Route::post('/notice/board/save', 'TeacherController@saveNotice')->name('save.notice');
